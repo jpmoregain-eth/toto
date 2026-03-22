@@ -1,0 +1,7 @@
+Toto Project
+
+#service role
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR0anJ6bWVnbXBhdmh0aHJ2cnpiIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NDA5Nzc5NSwiZXhwIjoyMDg5NjczNzk1fQ.OWxNJfSA7qiXF_9biPpn6vqEVRIuPK12YY9UouZeINg
+
+#project url
+https://tjtrzmegmpavhthrvzb.supabase.co

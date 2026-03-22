@@ -1,0 +1,32 @@
+name: Daily TOTO Update
+
+on:
+  schedule:
+    # 7:15 PM Singapore Time = 11:15 AM UTC
+    # Runs every day to catch regular Mon/Thu draws AND any special draws
+    - cron: "15 11 * * *"
+
+  # Also allows manual trigger from GitHub UI (useful for testing)
+  workflow_dispatch:
+
+jobs:
+  update-toto:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 supabase python-dotenv
+
+      - name: Run daily update
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: python daily_update.py
