@@ -4,7 +4,11 @@ on:
   schedule:
     # 7:15 PM Singapore Time = 11:15 AM UTC
     # Runs every day to catch regular Mon/Thu draws AND any special draws
-    - cron: "15 11 * * *"
+    - cron: "45 10 * * *"   # 6:45 PM SGT
+    - cron: "00 11 * * *"   # 7:00 PM SGT
+    - cron: "15 11 * * *"   # 7:15 PM SGT
+    - cron: "30 11 * * *"   # 7:30 PM SGT
+    - cron: "45 11 * * *"   # 7:45 PM SGT
 
   # Also allows manual trigger from GitHub UI (useful for testing)
   workflow_dispatch:
