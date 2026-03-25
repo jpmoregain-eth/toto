@@ -1,0 +1,40 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/toto/daily_update.py", line 119, in <module>
+    main()
+  File "/home/ubuntu/toto/daily_update.py", line 71, in main
+    supabase_url = os.environ["SUPABASE_URL"]
+                   ~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 685, in __getitem__
+KeyError: 'SUPABASE_URL'
+Traceback (most recent call last):
+  File "/home/ubuntu/toto/daily_update.py", line 119, in <module>
+    main()
+  File "/home/ubuntu/toto/daily_update.py", line 71, in main
+    supabase_url = os.environ["SUPABASE_URL"]
+                   ~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 685, in __getitem__
+KeyError: 'SUPABASE_URL'
+Traceback (most recent call last):
+  File "/home/ubuntu/toto/daily_update.py", line 119, in <module>
+    main()
+  File "/home/ubuntu/toto/daily_update.py", line 71, in main
+    supabase_url = os.environ["SUPABASE_URL"]
+                   ~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 685, in __getitem__
+KeyError: 'SUPABASE_URL'
+Traceback (most recent call last):
+  File "/home/ubuntu/toto/daily_update.py", line 119, in <module>
+    main()
+  File "/home/ubuntu/toto/daily_update.py", line 71, in main
+    supabase_url = os.environ["SUPABASE_URL"]
+                   ~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 685, in __getitem__
+KeyError: 'SUPABASE_URL'
+Traceback (most recent call last):
+  File "/home/ubuntu/toto/daily_update.py", line 119, in <module>
+    main()
+  File "/home/ubuntu/toto/daily_update.py", line 71, in main
+    supabase_url = os.environ["SUPABASE_URL"]
+                   ~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 685, in __getitem__
+KeyError: 'SUPABASE_URL'
