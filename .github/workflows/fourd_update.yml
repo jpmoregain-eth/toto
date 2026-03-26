@@ -1,4 +1,4 @@
-name: Daily TOTO Update
+name: Daily 4D Update
 on:
   schedule:
     - cron: "45 10 * * *"   # 6:45 PM SGT
@@ -8,7 +8,7 @@ on:
     - cron: "45 11 * * *"   # 7:45 PM SGT
   workflow_dispatch:
 jobs:
-  update-toto:
+  update-4d:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -19,8 +19,8 @@ jobs:
           python-version: "3.11"
       - name: Install dependencies
         run: pip install requests beautifulsoup4 supabase python-dotenv
-      - name: Run TOTO daily update
+      - name: Run 4D daily update
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-        run: python daily_update.py
+        run: python fourd_daily_update.py
