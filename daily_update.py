@@ -85,7 +85,25 @@ def main():
         print(f"Checking draw {check_draw}...")
 
         if draw_exists(supabase, check_draw):
-            print(f"  Draw {check_draw} already exists — skipping")
+            # Check if prize details are missing
+            prizes = supabase.table("toto_prize_details").select("id").eq("draw_no", check_draw).execute()
+            if not prizes.data:
+                print(f"  Draw {check_draw} missing prize details — fetching...")
+                draw = fetch_draw(check_draw)
+                if draw and draw.get("prize_details"):
+                    prize_rows = [
+                        {
+                            "draw_no":        check_draw,
+                            "prize_group":    p["prize_group"],
+                            "share_amount":   p["share_amount"],
+                            "winning_shares": p["winning_shares"],
+                        }
+                        for p in draw["prize_details"]
+                    ]
+                    supabase.table("toto_prize_details").insert(prize_rows).execute()
+                    print(f"  ✓ Prize details inserted for draw {check_draw}")
+            else:
+                print(f"  Draw {check_draw} already exists — skipping")
             check_draw += 1
             continue
 
