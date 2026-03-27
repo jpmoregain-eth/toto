@@ -1,11 +1,11 @@
 name: Daily 4D Update
 on:
   schedule:
-    - cron: "45 6 * * *"   # 2:45 PM SGT
-    - cron: "00 7 * * *"   # 3:00 PM SGT
-    - cron: "15 7 * * *"   # 3:15 PM SGT
-    - cron: "30 7 * * *"   # 3:30 PM SGT
-    - cron: "45 7 * * *"   # 3:45 PM SGT
+    - cron: "45 7 * * *"   # 2:45 PM SGT
+    - cron: "00 8 * * *"   # 3:00 PM SGT
+    - cron: "15 8 * * *"   # 3:15 PM SGT
+    - cron: "30 8 * * *"   # 3:30 PM SGT
+    - cron: "45 8 * * *"   # 3:45 PM SGT
   workflow_dispatch:
 jobs:
   update-4d:
