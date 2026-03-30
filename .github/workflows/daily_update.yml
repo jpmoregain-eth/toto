@@ -1,11 +1,11 @@
 name: Daily TOTO Update
 on:
   schedule:
-    - cron: "45 7 * * *"   # 6:45 PM SGT
-    - cron: "00 8 * * *"   # 7:00 PM SGT
-    - cron: "15 8 * * *"   # 7:15 PM SGT
-    - cron: "30 8 * * *"   # 7:30 PM SGT
-    - cron: "45 8 * * *"   # 7:45 PM SGT
+    - cron: "45 8 * * *"   # 6:45 PM SGT
+    - cron: "00 9 * * *"   # 7:00 PM SGT
+    - cron: "15 9 * * *"   # 7:15 PM SGT
+    - cron: "30 9 * * *"   # 7:30 PM SGT
+    - cron: "45 9 * * *"   # 7:45 PM SGT
   workflow_dispatch:
 jobs:
   update-toto:
