@@ -88,8 +88,10 @@ def main():
 
         if draw_exists(supabase, check_draw):
             # Check if prize details are missing
+            draw_row = supabase.table("toto_draws").select("group1_prize").eq("draw_no", check_draw).execute()
             prizes = supabase.table("toto_prize_details").select("id").eq("draw_no", check_draw).execute()
-            if not prizes.data:
+            g1 = draw_row.data[0]["group1_prize"] if draw_row.data else None
+            if not prizes.data or g1 is None:
                 print(f"  Draw {check_draw} missing prize details — fetching...")
                 draw = fetch_draw(check_draw)
                 if draw and draw.get("prize_details"):
