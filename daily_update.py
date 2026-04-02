@@ -77,6 +77,25 @@ def main():
     latest_in_db = get_latest_draw_no(supabase)
     print(f"Latest draw in DB: {latest_in_db}")
 
+    # Check if latest draw is missing prize details
+    prizes = supabase.table("toto_prize_details").select("id").eq("draw_no", latest_in_db).execute()
+    if len(prizes.data) < 7:
+        print(f"  Draw {latest_in_db} missing prize details — fetching...")
+        draw = fetch_draw(latest_in_db)
+        if draw and draw.get("prize_details"):
+            prize_rows = [
+                {
+                    "draw_no":        latest_in_db,
+                    "prize_group":    p["prize_group"],
+                    "share_amount":   p["share_amount"],
+                    "winning_shares": p["winning_shares"],
+                }
+                for p in draw["prize_details"]
+            ]
+            supabase.table("toto_prize_details").insert(prize_rows).execute()
+            supabase.table("toto_draws").update({"group1_prize": draw["group1_prize"]}).eq("draw_no", latest_in_db).execute()
+            print(f"  ✓ Prize details inserted for draw {latest_in_db}")
+
     # Try fetching the next few draws after what we have
     # (handles special draws and catching up after downtime)
     new_count = 0
